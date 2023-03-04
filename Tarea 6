@@ -1,0 +1,71 @@
+//Carlos Manuel Alanis Peña 732148
+
+const people = [
+    { name: "Raul", age: 27 },
+    { name: "Jose", age: 15 },
+    { name: "Maria", age: 52 },
+    { name: "Jesus", age: 18 },
+    { name: "Neo", age: 2 },
+    { name: "Mario", age: 78 },
+    { name: "Erica", age: 28 },
+    { name: "Cesar", age: 5 },
+    { name: "Paola", age: 40 },
+    { name: "Miguel", age: 68 },
+    { name: "David", age: 31 },
+    { name: "Cecy", age: 11 },
+    { name: "Sam", age: 26 },
+    { name: "Argie", age: 9 },
+    { name: "Olivia", age: 91 }
+];
+//Imperativa - filtro de mayores de 18 años
+function Above18(people) {
+  const result = [];
+
+  for (let i = 0; i < people.length; i++) {
+    const person = people[i];
+
+    if (person.age >= 18) {
+      result.push(person);
+    }
+  }
+
+  return result;
+}
+const peopleAbove18 = Above18(people);
+console.log(peopleAbove18); 
+
+
+
+
+//Arrow - filtro de mayores de 18 años
+const peopleAbove18Arrow = people.filter(person => person.age >= 18);
+console.log(peopleAbove18Arrow);
+
+
+
+
+
+//Imperativa - Total multiplicado por 2
+function AgeTimes2(people) {
+  let total = 0;
+
+  for (let i = 0; i < people.length; i++) {
+    const person = people[i];
+    total += person.age * 2;
+  }
+
+  return total;
+}
+const totalAgeTimes2 = AgeTimes2(people);
+console.log(totalAgeTimes2); 
+
+
+
+
+
+//Arrow - Total multiplicado por 2
+const totalAgeTimes2Arrow = people.reduce((total, person) => total + (person.age * 2), 0);
+console.log(totalAgeTimes2Arrow); 
+
+
+
